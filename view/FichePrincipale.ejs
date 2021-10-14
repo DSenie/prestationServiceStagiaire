@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/FichePrincipale.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="image"><img src="/img/EnieLogo.png" /></div>
+      <div class="headerContent">
+        <h4>FICHE DE <span>PRESTATIONS</span> INFORMATIQUES</h4>
+        <button id="ajouter"><a href="/insertInfo">Ajouter</a></button>
+      </div>
+    </header>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Ingenieur</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% prest.forEach(function(data){ %>
+          <tr>
+            <td>
+              <a href="viewFiche/<%= data.id_user%>"><%= data.id_user%></a>
+            </td>
+            <td>
+              <a href="viewFiche/<%= data.id_user%>"
+                ><%= data.first_nameIng%> <%= data.last_nameIng%></a
+              >
+            </td>
+            <td>
+              <a href="viewFiche/<%= data.id_user%>"><%= data.createdAt%></a>
+            </td>
+            <td>
+              <div class="btnGrp">
+                <button class="btnModif">
+                  <a href="update/<%= data.id_user%>">Modifier</a>
+                </button>
+                <button>
+                  <a href="delete/<%= data.id_user%>">Supprimer</a>
+                </button>
+              </div>
+            </td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </section>
+
+    <script src="/reload/reload.js"></script>
+  </body>
+</html>

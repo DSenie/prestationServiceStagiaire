@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  height: 100vh;
+}
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  background: #eeeeee;
+}
+
+header .image img {
+  position: relative;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+header .headerContent {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.headerContent h4 {
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+.headerContent h4 span {
+  color: darkblue;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.headerContent button,
+td .btnGrp button {
+  border: none;
+  outline: none;
+}
+
+.headerContent button a,
+td .btnGrp button a {
+  padding: 10px 50px;
+  background: darkblue;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+section {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  margin-top: 55px;
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 0 5px 10px #ccc;
+  text-align: center;
+  overflow: hidden;
+}
+
+table thead {
+  box-shadow: 0 5px 10px #ccc;
+}
+
+table thead th {
+  padding: 20px 25px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+
+table tbody tr {
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+
+table tbody tr:hover {
+  background-color: #eeeeee;
+  transform: scale(1.02);
+  box-shadow: 0 5px 10px #ccc;
+}
+
+table tbody td {
+  padding: 25px 25px;
+}
+
+table tbody td a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+/*tr:nth-child(even) {
+  background: #eeeeee;
+}*/
+
+.btnGrp .btnModif {
+  margin-right: 7px;
+}

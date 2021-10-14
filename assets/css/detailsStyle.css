@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  height: 100vh;
+}
+
+header {
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+}
+
+header table {
+  border: 1px solid #000;
+  width: 100%;
+}
+
+table thead tr th {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+table thead tr th img {
+  position: relative;
+  width: 300px;
+  height: 80px;
+  margin-left: 25px;
+}
+
+table thead tr th .title {
+  position: relative;
+  padding-top: 25px;
+  margin-right: -250px;
+}
+
+table thead tr th .title h2 {
+  letter-spacing: 1px;
+}
+
+table tbody tr td {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+table tbody tr td .vl {
+  color: black;
+}
+
+#cell1 {
+  position: relative;
+  padding-left: 15px;
+  width: 77%;
+}
+
+#cell2 {
+  padding-right: 15px;
+}
+
+h4 {
+  margin-top: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.parag1 {
+  margin-top: 30px;
+  margin-left: 60px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#third {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+#nbrdepl {
+  margin-right: 150px;
+}
+
+#table1 {
+  position: relative;
+  margin: 15px 60px;
+  /*border: 1px solid #000;*/
+  width: 90%;
+  box-shadow: 0 5px 10px #ccc;
+}
+
+#table1 thead {
+  box-shadow: 0 5px 10px #ccc;
+}
+
+#table1 thead td {
+  padding: 20px 50px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+
+#table1 tbody td {
+  padding: 20px 50px;
+  text-align: center;
+}
+
+#table2 {
+  position: relative;
+  margin: 60px 60px 15px;
+  /*border: 1px solid #000;*/
+  width: 90%;
+  box-shadow: 0 5px 10px #ccc;
+}
+
+#table2 thead {
+  box-shadow: 0 5px 10px #ccc;
+}
+
+#table2 thead td {
+  padding: 20px 50px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: 900;
+}
+
+#table2 tbody td {
+  padding: 30px 25px 25px 95px;
+}
+
+footer {
+  margin-top: 60px;
+  margin-left: 60px;
+  padding-bottom: 20px;
+  font-size: 17px;
+}
+
+footer p {
+  color: darkblue;
+}
+
+.btn {
+  padding: 30px 0 30px 1095px;
+}
+
+.btn button {
+  border: none;
+  outline: none;
+}
+
+.btn button a {
+  padding: 10px 50px;
+  background: darkblue;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/formStyle.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" action="/updateInfo" method="POST">
+        <!-- Progress Bar -->
+        <div class="progressBar">
+          <div class="progress" id="progress"></div>
+          <div class="progressStep active">1</div>
+          <div class="progressStep">2</div>
+          <div class="progressStep">3</div>
+        </div>
+        <!-- Form -->
+        <input type="hidden" value="<%= dataEdit.id_user%>" name="id" />
+        <div class="form_step form_active">
+          <div class="title">Type de travail effectué</div>
+          <div class="inputBox1">
+            <label>
+              Maintenance <input type="checkbox" name="maintenance"
+              id="Maintenance" value="Maintenance" <%
+              if(dataEdit.Type_Travail.includes("Maintenance")) { %>
+              checked=true <% } %> />
+            </label>
+            <label>
+              Formation <input type="checkbox" name="formation" id="Formation"
+              value="Formation" <%
+              if(dataEdit.Type_Travail.includes("Formation")) { %> checked=true
+              <% } %> />
+            </label>
+            <label>
+              Produit <input type="checkbox" name="produit" id="Produit"
+              value="Produit" <% if(dataEdit.Type_Travail.includes("Produit")) {
+              %> checked=true <% } %> />
+            </label>
+            <label>
+              Solution <input type="checkbox" name="solution" id="Solution"
+              value="Solution" <% if(dataEdit.Type_Travail.includes("Solution"))
+              { %> checked=true <% } %> />
+            </label>
+          </div>
+          <div class="title">Type de ressource informatique</div>
+          <div class="inputBox1">
+            <label>
+              Matériel <input type="checkbox" name="matériel" id="Matériel"
+              value="Matériel" <%
+              if(dataEdit.Type_Ressource.includes("Matériel") ) { %>
+              checked=true <% } %> />
+            </label>
+            <label id="log">
+              Logiciel <input type="checkbox" name="logiciel" id="Logiciel"
+              value="Logiciel" <%
+              if(dataEdit.Type_Ressource.includes("Logiciel")) { %> checked=true
+              <% } %> />
+            </label>
+            <label id="res">
+              Réseau <input type="checkbox" name="réseau" id="Réseau"
+              value="Réseau" <% if(dataEdit.Type_Ressource.includes("Réseau")) {
+              %> checked=true <% } %>/>
+            </label>
+            <label>
+              Autre <input type="checkbox" name="autre" id="Autre" value="Autre"
+              <% if(dataEdit.Type_Ressource.includes("Autre")) { %> checked=true
+              <% } %>/>
+            </label>
+          </div>
+          <div class="inputBox3">
+            <label id="lab1">
+              Avec déplacement de l'informaticien <input type="checkbox"
+              name="depl" id="depl" value="True" <%
+              if(dataEdit.depl_Info==="True"){ %> checked=true <% } %>/>
+            </label>
+            <label id="lab2">
+              Nombre de déplacements
+              <input
+                type="text"
+                name="nbr_Dep"
+                id="nbr"
+                value="<%= dataEdit.nbr_Dep%>"
+              />
+            </label>
+          </div>
+          <div class="btnGrp">
+            <a href="/" class="prec">Précédent</a>
+            <a href="#" class="next" id="suiv">Suivant</a>
+          </div>
+        </div>
+        <div class="form_step">
+          <div class="inputBox">
+            <input
+              type="text"
+              placeholder="N°"
+              id="id"
+              name="numero"
+              value="<%= dataEdit.numero%>"
+            />
+          </div>
+          <div class="inputBox">
+            <textarea
+              id="desig"
+              cols="30"
+              rows="10"
+              placeholder="Designation"
+              name="designation"
+            >
+<%= dataEdit.designation %></textarea
+            >
+          </div>
+          <div class="inputBox">
+            <textarea
+              id="desc"
+              cols="30"
+              rows="10"
+              placeholder="Description"
+              name="description"
+            >
+<%= dataEdit.description %></textarea
+            >
+          </div>
+          <div class="btnGrp">
+            <a href="" class="back">Précédent</a>
+            <a href="#" class="next">Suivant</a>
+          </div>
+        </div>
+        <div class="form_step">
+          <div class="title">Ingenieur DIIE Responsable</div>
+          <div class="inputBoxText">
+            <input
+              type="text"
+              placeholder="Nom"
+              class="nom"
+              name="firstname1"
+              value="<%= dataEdit.first_nameIng %>"
+            />
+            <input
+              type="text"
+              placeholder="Prenom"
+              class="prenom"
+              name="lastname1"
+              value="<%= dataEdit.last_nameIng %>"
+            />
+          </div>
+          <div class="inputBox">
+            <textarea
+              id="struc"
+              cols="30"
+              rows="5"
+              placeholder="Structure Beneficiaire"
+              name="structure"
+            >
+<%= dataEdit.struc_benef %></textarea
+            >
+          </div>
+          <div class="title">Responsable / Beneficiaire</div>
+          <div class="inputBoxText">
+            <input
+              type="text"
+              placeholder="Nom"
+              class="nom"
+              name="firstname2"
+              value="<%= dataEdit.first_nameRes %>"
+            />
+            <input
+              type="text"
+              placeholder="Prenom"
+              class="prenom"
+              name="lastname2"
+              value="<%= dataEdit.last_nameRes %>"
+            />
+          </div>
+          <div class="btnGrp">
+            <a href="#" class="back">Précédent</a>
+            <input type="submit" value="Soumettre" class="next" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <script src="/js/form.js"></script>
+</html>

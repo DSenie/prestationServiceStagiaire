@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/formStyle.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" action="/insertInfo" method="POST" name="frm">
+        <!-- Progress Bar -->
+        <div class="progressBar">
+          <div class="progress" id="progress"></div>
+          <div class="progressStep active">1</div>
+          <div class="progressStep">2</div>
+          <div class="progressStep">3</div>
+        </div>
+        <!-- Form -->
+        <div class="form_step form_active">
+          <div class="title">Type de travail effectué</div>
+          <input type="hidden" name="travailEffectué" id="travailEffec" />
+          <div class="inputBox1">
+            <label>
+              Maintenance
+              <input
+                type="checkbox"
+                name="travail"
+                id="maintenance"
+                value="Maintenance"
+              />
+            </label>
+            <label>
+              Formation
+              <input
+                type="checkbox"
+                name="travail"
+                id="formation"
+                value="Formation"
+              />
+            </label>
+            <label>
+              Produit
+              <input
+                type="checkbox"
+                name="travail"
+                id="produit"
+                value="Produit"
+              />
+            </label>
+            <label>
+              Solution
+              <input
+                type="checkbox"
+                name="travail"
+                id="solution"
+                value="Solution"
+              />
+            </label>
+          </div>
+          <div class="title">Type de ressource informatique</div>
+          <div class="inputBox1">
+            <label>
+              Matériel
+              <input
+                type="checkbox"
+                name="ressource"
+                id="matériel"
+                value="Matériel"
+              />
+            </label>
+            <label id="log">
+              Logiciel
+              <input
+                type="checkbox"
+                name="ressource"
+                id="logiciel"
+                value="Logiciel"
+              />
+            </label>
+            <label id="res">
+              Réseau
+              <input
+                type="checkbox"
+                name="ressource"
+                id="réseau"
+                value="Réseau"
+              />
+            </label>
+            <label>
+              Autre
+              <input
+                type="checkbox"
+                name="ressource"
+                id="autre"
+                value="Autre"
+              />
+            </label>
+          </div>
+          <div class="inputBox3">
+            <label id="lab1">
+              Avec déplacement de l'informaticien
+              <input type="checkbox" name="depl" id="depl" value="True" />
+            </label>
+            <label id="lab2">
+              Nombre de déplacements
+              <input type="text" name="nbr_Dep" id="nbr" />
+              <p id="alert"></p>
+            </label>
+          </div>
+          <div class="btnGrp">
+            <a href="/" class="prec">Précédent</a>
+            <a href="#" class="next" id="suiv" onclick="IsEmpty()">Suivant</a>
+          </div>
+        </div>
+        <div class="form_step">
+          <div class="inputBox">
+            <input type="text" placeholder="N°" id="id" name="numero" />
+          </div>
+          <div class="inputBox">
+            <textarea
+              id="desig"
+              cols="30"
+              rows="10"
+              placeholder="Designation"
+              name="designation"
+            ></textarea>
+          </div>
+          <div class="inputBox">
+            <textarea
+              id="desc"
+              cols="30"
+              rows="10"
+              placeholder="Description"
+              name="description"
+            ></textarea>
+          </div>
+          <div class="btnGrp">
+            <a href="" class="back">Précédent</a>
+            <a href="#" class="next" onclick="IsEmpty()">Suivant</a>
+          </div>
+        </div>
+        <div class="form_step">
+          <div class="title">Ingenieur DIIE Responsable</div>
+          <div class="inputBoxText">
+            <input
+              type="text"
+              placeholder="Nom"
+              class="nom"
+              name="firstname1"
+            />
+            <input
+              type="text"
+              placeholder="Prenom"
+              class="prenom"
+              name="lastname1"
+            />
+          </div>
+          <div class="inputBox">
+            <textarea
+              id="struc"
+              cols="30"
+              rows="5"
+              placeholder="Structure Beneficiaire"
+              name="structure"
+            ></textarea>
+          </div>
+          <div class="title">Responsable / Beneficiaire</div>
+          <div class="inputBoxText">
+            <input
+              type="text"
+              placeholder="Nom"
+              class="nom"
+              name="firstname2"
+            />
+            <input
+              type="text"
+              placeholder="Prenom"
+              class="prenom"
+              name="lastname2"
+            />
+          </div>
+
+          <div class="btnGrp">
+            <a href="#" class="back">Précédent</a>
+            <input
+              type="submit"
+              value="Soumettre"
+              class="next"
+              onclick="IsEmpty()"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validateForm() {
+        const isEmpty = (str) => !str.trim().length;
+        document.getElementById("nbr").addEventListener("input", function () {
+          if (isEmpty(this.value)) {
+            console.log("Nombre is invalid (Empty)");
+          }
+        });
+      }
+      function IsEmpty() {
+        if (document.forms["frm"].nbr_Dep.value === "") {
+          alert("Nombre de déplacements est vide");
+          return false;
+        }
+        if (document.forms["frm"].numero.value === "") {
+          alert("Numero est vide");
+          return false;
+        }
+        if (document.forms["frm"].designation.value === "") {
+          alert("Designation est vide");
+          return false;
+        }
+        if (document.forms["frm"].description.value === "") {
+          alert("Description est vide");
+          return false;
+        }
+        if (document.forms["frm"].firstname1.value === "") {
+          alert("Le nom d'ingénieur est vide");
+          return false;
+        }
+        if (document.forms["frm"].lastname1.value === "") {
+          alert("Le prénom d'ingénieur est vide");
+          return false;
+        }
+        if (document.forms["frm"].structure.value === "") {
+          alert("Structure beneficiaire est vide");
+          return false;
+        }
+        if (document.forms["frm"].firstname2.value === "") {
+          alert("Le nom de responsable est vide");
+          return false;
+        }
+        if (document.forms["frm"].lastname2.value === "") {
+          alert("Le prénom de responsable est vide");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+
+  <script src="/js/form.js"></script>
+</html>
